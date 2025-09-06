@@ -77,3 +77,9 @@ This is a WAD621S Lab activity
   -Reloading the page restores saved students.
 
   -Search bar hides non-matching results.
+  
+👨‍💻 Author
+
+  -Andris J.E. Kaishungu
+
+  -Course code: WAD621S – Lab 4
