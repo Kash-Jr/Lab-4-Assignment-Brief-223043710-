@@ -7,25 +7,140 @@ body{
 main{
      max-width: 400px; 
      margin: auto;
+     padding: 1rem;
 }
 
-.grid{
-     display: grid; 
-     gap: 10px;
+:root {
+     font-family: system-ui, sans-serif;
+     line-height: 1.4;
+}
+
+.grid {
+     display: grid;
+     gap: .75rem;
+     margin-bottom: 1rem;
 }
 
 .cards{
      display: grid; 
      grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
-     gap: 10px;
-     margin-block: 5px;
+     gap: 1rem;
+     margin-block: 1rem;
+
 }
 
-button{
-     padding: 5px;
+.card-person {
+     border: 1px solid #ddd;
+     padding: 1rem;
+     border-radius: .75rem;
+     box-shadow: 0 1px 4px rgba(0,0,0,.06);
+     display: grid;
+     gap: .5rem;
+     background: #fff;
 }
 
-#toolbar{
-     display: grid; 
-     padding: 15px;
+.card-person img {
+     width: 100%;
+     max-height: 160px;
+     object-fit: cover;
+     border-radius: .5rem;
+}
+
+button {
+     padding: .50rem;
+     background: #00bdf7;
+     color: rgb(0, 0, 0);
+     cursor: pointer;
+     border: none;
+     border-radius: 1rem;
+     margin: auto, 0, auto, 0;
+     font-size: 1rem;
+     border: 1px solid #0d22e0;
+}
+
+button:hover {
+     background: #0077cc;
+}
+
+.addButton{
+     padding: 1rem;
+     margin-left: 35%;
+}
+
+#toolbar {
+     margin: 1rem 0;
+}
+
+#toolbar input {
+     width: 100%;
+     max-width: 300px;
+}
+
+label {
+     font-weight: 700;
+}
+
+table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 1rem;
+}
+
+th, td {
+     border: 1px solid #000000;
+     padding: .5rem;
+     text-align: left;
+}
+
+th {
+     background: #f2f2f2;
+}
+
+.sr {
+     position: absolute;
+     left: -9999px;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
+}
+
+.error {
+     color: #cf0026;
+     font-size: .85rem;
+     min-height: 1em;
+}
+
+.badge {
+     display: inline-block;
+     padding: .15rem .5rem;
+     border-radius: 999px;
+     border: 1px solid #ccc;
+     font-size: .8rem;
+     background: #f5f5f5;
+     margin-right: .25rem;
+}
+
+input{
+     padding: .4rem .6rem;
+     font-size: 1rem;
+     border: 1px solid #70d2ff;
+     border-radius: .5rem;
+}
+
+
+input:focus, button:focus {
+     outline: 2px solid #11cbe4;
+     outline-offset: 1px;
+}
+
+select{
+     padding: 1rem;
+     font-size: 1rem;
+     border: 1px solid #4dc0f5;
+     border-radius: 1rem;
+}
+
+select:focus{
+     outline: 2px solid #11cbe4;
+     outline-offset: 1px;
 }
