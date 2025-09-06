@@ -3,6 +3,9 @@ body{
     border-style: inherit;
     background-image: url("Madzery.jpg");
     padding: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Centers the main content*/
@@ -10,6 +13,10 @@ main{
      max-width: 1000px; 
      margin: auto;
      padding: 1rem; /* provides space inside the container (1rem = 16px) */
+     background-image: url("Madzery.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 
 /* Sets the base font family and line spacing for the whole document */
@@ -36,13 +43,17 @@ main{
 
 /* Styling for each student profile card */
 .card-person {
-     border: 1px solid aliceblue;
+     border: 1px solid rgb(88, 176, 253);
      padding: 1rem;
      border-radius: .75rem;
      box-shadow: 0 1px 4px rgba(0,0,0,.06);
      display: grid;
      gap: .5rem;
      background: aliceblue;
+     background-image: url('person-profile-icon-1.svg');
+     background-position: 3px 3px;
+     background-repeat: no-repeat;
+     background-size: 38px 38px;
 }
 
 /* Makes images fit neatly inside cards */
@@ -173,6 +184,11 @@ select:focus{
      max-width: 500px; 
      margin: auto;
      padding: 1rem;
+     background-image: url("Madzery.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     filter: contrast(100%);
 }
 
 /* Text alignment */
