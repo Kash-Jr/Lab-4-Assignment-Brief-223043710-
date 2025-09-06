@@ -131,6 +131,7 @@ input{
 input:focus{
      outline: 2px solid #11cbe4;
      outline-offset: 1px;
+     width: 100%
 }
 
 select{
@@ -166,5 +167,9 @@ legend{
 }
 
 #q{
-     
+     background-color: aliceblue;
+     background-image: url('blue-search-icon.svg');
+     background-position: 3px 3px;
+     background-repeat: no-repeat;
+     padding-left: 40px
 }
