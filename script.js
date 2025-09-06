@@ -28,11 +28,11 @@ function getFormData() {
 
 function validateAll(d) {
   const errors = {};
-  if (!d.firstName) errors.firstName = 'First name is required.';
-  if (!d.lastName) errors.lastName = 'Last name is required.';
-  if (!emailRx.test(d.email)) errors.email = 'Enter a valid email.';
+  if (!d.firstName) errors.firstName = 'First Name is required.';
+  if (!d.lastName) errors.lastName = 'Last Name is required.';
+  if (!emailRx.test(d.email)) errors.email = 'Enter a valid Email.';
   if (!d.programme) errors.programme = 'Select a programme.';
-  if (!d.year) errors.year = 'Choose a year.';
+  if (!d.year) errors.year = 'Choose a Year.';
   return { ok: Object.keys(errors).length === 0, errors };
 }
 
