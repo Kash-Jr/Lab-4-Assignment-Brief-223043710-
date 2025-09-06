@@ -1,26 +1,31 @@
+/* includes main profile with background image*/
 body{
     border-style: inherit;
     background-image: url("Madzery.jpg");
     padding: 80px;
 }
 
+/* Centers the main content*/
 main{
      max-width: 1000px; 
      margin: auto;
-     padding: 1rem;
+     padding: 1rem; /* provides space inside the container (1rem = 16px) */
 }
 
+/* Sets the base font family and line spacing for the whole document */
 :root {
      font-family: system-ui, sans-serif;
      line-height: 1.4;
 }
 
+/* Creates spacing between form inputs and labels */
 .grid {
      display: grid;
      gap: .75rem;
      margin-bottom: 1rem;
 }
 
+/* Creates responsive grid for student profile cards */
 .cards{
      display: grid; 
      grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
@@ -29,16 +34,18 @@ main{
 
 }
 
+/* Styling for each student profile card */
 .card-person {
-     border: 1px solid #c1f3ff;
+     border: 1px solid aliceblue;
      padding: 1rem;
      border-radius: .75rem;
      box-shadow: 0 1px 4px rgba(0,0,0,.06);
      display: grid;
      gap: .5rem;
-     background: #c1f3ff;
+     background: aliceblue;
 }
 
+/* Makes images fit neatly inside cards */
 .card-person img {
      width: 100%;
      max-height: 160px;
@@ -46,6 +53,7 @@ main{
      border-radius: .5rem;
 }
 
+/* Styling for the buttons */
 button {
      padding: .50rem;
      background: #00bdf7;
@@ -58,6 +66,7 @@ button {
      border: 1px solid #293eff;
 }
 
+/* Darker color when hovering over button */
 button:hover {
      background: #2585ca;
 }
@@ -67,35 +76,45 @@ button:hover {
      margin-left: 35%;
 }
 
+/* Provides some spacing above search bar */
 #toolbar {
      margin: 1rem 0;
 }
 
+/* Search bar sizing and animation effect */
 #toolbar input {
      width: 100px;
      transition: width 0.4s ease-in-out;
 }
 
 label {
-     font-weight: 700;
+     font-weight: 700; /* makes labels bolder */
 }
 
+/* Full-width table with borders */
 table {
      width: 100%;
      border-collapse: collapse;
      margin-top: 1rem;
 }
 
+/* Cell borders and padding */
 th, td {
      border: 1px solid #00000059;
      padding: .5rem;
      text-align: left;
 }
 
+/* Table header background color */
 th {
      background: #c1f3ff;
 }
 
+tr{
+     background: #c1f3ff;
+}
+
+/* Screen-reader-only text (hidden visually but read by assistive tech) */
 .sr {
      position: absolute;
      left: -9999px;
@@ -104,12 +123,14 @@ th {
      overflow: hidden;
 }
 
+/* Error message styling */
 .error {
      color: #e90303;
      font-size: .85rem;
      min-height: 1em;
 }
 
+/* Small pill-shaped labels for programme/year */
 .badge {
      display: inline-block;
      padding: .15rem .5rem;
@@ -120,6 +141,7 @@ th {
      margin-right: .25rem;
 }
 
+/* Styling for input */
 input{
      padding: .4rem .6rem;
      font-size: 1rem;
@@ -128,6 +150,7 @@ input{
      background-color: aliceblue;
 }
 
+/* Blue outline when input is focused for accessibility */
 input:focus{
      outline: 2px solid #11cbe4;
      outline-offset: 1px;
@@ -145,12 +168,14 @@ select:focus{
      outline-offset: 1px;
 }
 
+/* Form width Adjustment and padding */
 #regForm{
-     max-width: 400px; 
+     max-width: 500px; 
      margin: auto;
      padding: 1rem;
 }
 
+/* Text alignment */
 h1{
      text-align: center;
 }
@@ -159,12 +184,14 @@ h2{
      text-align: center;
 }
 
+/* Legend coloring */
 legend{
      background-color: #f0f9fcbb;
      border-style:none;
      border-radius: .5rem;
 }
 
+/* Search icon and background color */
 #q{
      background-color: aliceblue;
      background-image: url('blue-search-icon.svg');

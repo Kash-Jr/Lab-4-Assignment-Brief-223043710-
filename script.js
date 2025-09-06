@@ -1,8 +1,11 @@
+// Shortcuts for selecting elements
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+// Regex pattern for validating email addresses
 const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const state = [];
+const state = [];// Array that stores all the student objects
 
 const ERR_MAP = {
   firstName: '#err-first',
@@ -12,6 +15,7 @@ const ERR_MAP = {
   year: '#err-year'
 };
 
+//Collects data from the form fields
 function getFormData() {
   const interests = $$('input[name="interests"]:checked').map(i => i.value);
   const yearEl = $('input[name="year"]:checked');
@@ -26,6 +30,7 @@ function getFormData() {
   };
 }
 
+//Form data validation happens here
 function validateAll(d) {
   const errors = {};
   if (!d.firstName) errors.firstName = 'First Name is required.';
@@ -36,12 +41,14 @@ function validateAll(d) {
   return { ok: Object.keys(errors).length === 0, errors };
 }
 
+// Displays inline error messages
 function showErrors(errors) {
   Object.entries(ERR_MAP).forEach(([field, sel]) => {
     const el = $(sel);
     if (el) el.textContent = errors[field] || '';
   });
 }
+
 
 function focusFirstInvalid(errors) {
   for (const field of Object.keys(ERR_MAP)) {
@@ -55,6 +62,7 @@ function focusFirstInvalid(errors) {
   }
 }
 
+// Creates a profile card and adds it to the page
 function renderCard(s) {
   const card = document.createElement('div');
   card.className = 'card-person';
@@ -70,6 +78,7 @@ function renderCard(s) {
   $('#cards').prepend(card);
 }
 
+// Creates a summary table row for each student
 function renderRow(s) {
   const tr = document.createElement('tr');
   tr.dataset.id = s.id;
@@ -83,11 +92,13 @@ function renderRow(s) {
   $('#summary tbody').prepend(tr);
 }
 
+// Removes a student by ID from both card and table
 function removeById(id) {
   document.querySelector(`#cards [data-id="${id}"]`)?.remove();
   document.querySelector(`#summary tbody tr[data-id="${id}"]`)?.remove();
 }
 
+// Save and load state from localStorage (browser storage)
 function save() { localStorage.setItem('students', JSON.stringify(state)); }
 function load() { return JSON.parse(localStorage.getItem('students') || '[]'); }
 
@@ -106,10 +117,12 @@ function normalizeLegacy(s) {
   return s;
 }
 
+// Runs when the page loads
 window.addEventListener('DOMContentLoaded', () => {
   const saved = load().map(normalizeLegacy);
   saved.forEach(s => { state.push(s); renderCard(s); renderRow(s); });
 
+  // Handles the form submission
   $('#regForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const data = getFormData();
@@ -129,6 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#live').textContent = 'Profile added.';
   });
 
+  // Handles the remove button clicks (cards and table rows)
   document.body.addEventListener('click', (e) => {
     if (!e.target.matches('.btn-remove')) return;
     const host = e.target.closest('[data-id]');
@@ -141,6 +155,7 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#live').textContent = 'Profile removed.';
   });
 
+  // Search filter for name/programme or interests
   $('#q')?.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
     const match = (s) =>
